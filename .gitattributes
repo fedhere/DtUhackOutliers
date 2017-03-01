@@ -1,3 +1,4 @@
 *.npy filter=lfs diff=lfs merge=lfs -text
 data/KeplerSampleWErr.npy filter=lfs diff=lfs merge=lfs -text
 data/KeplerSampleWErrSparse.npy filter=lfs diff=lfs merge=lfs -text
+data/KeplerSampleWErr_GoodErr.npy filter=lfs diff=lfs merge=lfs -text
