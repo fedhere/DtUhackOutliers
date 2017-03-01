@@ -18,5 +18,4 @@ We wanted to use both densely- and sparsely-sampled light curves.
 
 Proposed dataset: (Kepler lcvs (dense), Kepler (sparse), Gaia lcvs (sparse) 
 
-To download the data, go here, click the download button at upper right of file preview:
-https://github.com/fedhere/DtUhackOutliers/blob/master/data/KeplerSampleWErrSparse.npy
+To download the data, go to the data directory, click on the .npy files, and click download on the upper right in the file preview. 
