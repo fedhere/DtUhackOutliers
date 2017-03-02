@@ -16,6 +16,6 @@ After we generate a list of outliers, we hope to have astronomer "citizen scient
 
 We wanted to use both densely- and sparsely-sampled light curves. 
 
-Proposed dataset: (Kepler lcvs (dense), Kepler (sparse), Gaia lcvs (sparse) 
+Proposed dataset: Kepler lcvs (dense), Kepler lcvs (sparse), Gaia lcvs (sparse and different number of points) 
 
 To download the data, go to the data directory, click on the .npy files, and click download on the upper right in the file preview. 
