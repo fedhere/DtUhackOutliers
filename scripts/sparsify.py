@@ -39,21 +39,23 @@ if __name__ == '__main__':
                       for j in range(3)])).reshape(kobjects5.shape[0], 3,
                                                    len(k[0]))
     ax = pl.figure().add_subplot(111)
-    i=0
-    pl.errorbar(kobjects5[i][0], kobjects5[i][1], yerr=kobjects5[i][2],
+    for i in range(len(kobjects5)):
+        pl.errorbar(kobjects5[i][0], kobjects5[i][1], yerr=kobjects5[i][2],
                 fmt='--')
 
     
-    print(sporadicSampling(10, kobjects5, square=False)[2])
+    #print(sporadicSampling(10, kobjects5, square=False)[2])
     for k,a in enumerate(sporadicSampling(10, kobjects5, square=True)[0]):
-        print ("here", kobjects5[i][:,a].shape)
+        #print (kobjects5[k][:,a].shape)
+        #print(k,kobjects5[k][0,a], kobjects5[k][1,a],
+        #            kobjects5[k][2,a])
+        ax.errorbar(kobjects5[k][0,a], kobjects5[k][1,a],
+                    yerr=kobjects5[k][2,a], fmt='o')
 
-        ax.errorbar(kobjects5[i][0,a], kobjects5[i][1,a],
-                    yerr=kobjects5[i][2,a], fmt='x')
-
-    for k,a in enumerate(sporadicSampling(10, kobjects5, square=True)[2]):
+    for k,a in enumerate(sporadicSampling(10, kobjects5, square=False)[2]):
+        #print(k,a)
         ax.errorbar(a[0], a[1],
-                    yerr=a[2], fmt='*')
+                    yerr=a[2], fmt='x')
 
         
 
