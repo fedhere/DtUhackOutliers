@@ -28,8 +28,7 @@ def sporadicSampling(N, indata, square=False):
     newind = [subSampled[i][a] for i,a in
      enumerate(np.concatenate([np.atleast_2d(
          np.array([True]*duplicates.shape[0])).T, ~duplicates], axis=1))]
-    return newind, indata.shape, \
-        np.array([[indata[i][0][ni], indata[i][1][ni],
+    return newind,  np.array([[indata[i][0][ni], indata[i][1][ni],
                    indata[i][2][ni]] for i,ni in enumerate(newind)])
 
 if __name__ == '__main__':
