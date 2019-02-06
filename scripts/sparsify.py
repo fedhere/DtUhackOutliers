@@ -1,5 +1,6 @@
 import numpy as np
 import pylab as pl
+from config import *
 
 def sporadicSampling(N, indata, square=False):
     '''Created a sporadically sampled subset of the original Mx3 data cube
@@ -33,10 +34,12 @@ def sporadicSampling(N, indata, square=False):
 
 if __name__ == '__main__':
     #testing on 5 objects from KeplerSampleFullQ.npy
-    kobjects5 = np.load("../data/KeplerSampleFullQ.npy")[:5]
-    kobjects5 = np.array(([k[j] for k in kobjects5
-                      for j in range(3)])).reshape(kobjects5.shape[0], 3,
-                                                   len(k[0]))
+    kobjects5 = np.array(np.load(DATAPATH + "/KeplerSampleFullQ.npy",
+                        encoding='latin1')[:5])
+    npoints = len(kobjects5[0][0])
+    kobjects5 = np.array([k[j] for k in kobjects5
+                      for j in range(3)])
+    kobjects5 = kobjects5.reshape(5, 3, npoints)
     ax = pl.figure().add_subplot(111)
     for i in range(len(kobjects5)):
         pl.errorbar(kobjects5[i][0], kobjects5[i][1], yerr=kobjects5[i][2],
@@ -51,11 +54,11 @@ if __name__ == '__main__':
         ax.errorbar(kobjects5[k][0,a], kobjects5[k][1,a],
                     yerr=kobjects5[k][2,a], fmt='o')
 
-    for k,a in enumerate(sporadicSampling(10, kobjects5, square=False)[2]):
+    for k,a in enumerate(sporadicSampling(10, kobjects5, square=False)[1]):
         #print(k,a)
         ax.errorbar(a[0], a[1],
                     yerr=a[2], fmt='x')
-
+    pl.show()
         
 
     ax.set_xlabel("time")
