@@ -6,7 +6,7 @@ from scipy import stats
 
 from sklearn import svm
 
-datafile = 'KeplerSampleWErr.npy'
+datafile = '../../data/KeplerSampleWErr.npy'
 data = np.load(datafile)
 # data shape is (2500, 3, 100)
 # (targets, (time, flux, error), epochs)
