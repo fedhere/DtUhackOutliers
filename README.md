@@ -7,14 +7,19 @@ After we generate a list of outliers, we hope to have astronomer "citizen scient
 
 ## Algorithms to test
 
-1. Unsupervised random forest
+1. Isolation forest
+2. Unsupervised random forest
+3. DMDT (Mahabal17) + tSNE
+4. DMDT (Mahabal17) + UMAP
+
+
+Future Work
 2. Conditional entropy (Rényi entropy)
 3. Persistent homology
-4. Isolation tree 
 
 ## Data
 
-We wanted to use both densely- and sparsely-sampled light curves. 
+We use both densely- and sparsely-sampled light curves. 
 
 Proposed dataset: Kepler lcvs (dense), Kepler lcvs (sparse), Gaia lcvs (sparse and different number of points) 
 
